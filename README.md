@@ -28,8 +28,26 @@ for button
 for cancel
   = button_to 'Cancel', movies_path, :method => :get
   
-  
+for description:
 
+
+in index
+%td= movie.description
+
+
+in new
+= label :movie, :description, 'Description'
+  = text_field :movie, :description
+  
+in edit
+= label :movie, :description, 'Description'
+  = text_field :movie, :description
+  
+  
+in controller
+def movie_params
+    params.require(:movie).permit(:rating, :release_date, :title, :description)
+  end
 
 
 
