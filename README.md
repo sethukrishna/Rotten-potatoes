@@ -9,5 +9,33 @@
    
  Navigate to layouts and add a <p> tag with your name
  
+ then 
  
+for row number:
+  - @movies.each_with_index do |movie, index|
+      %tr
+        %td= index
+
+For that pink one:
+<style> tr:hover {background-color: pink;}</style>
+
+for sorting title:
+@movies = @movies.order('title')
+
+for button 
+= button_to 'Edit info', edit_movie_path(@movie), :method => :get
+
+for cancel
+  = button_to 'Cancel', movies_path, :method => :get
+  
+  
+
+
+
+
+
+
+
+        
+        
  
